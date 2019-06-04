@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: center;
 
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -122,16 +128,28 @@
 
 .sidenav {
     margin-top: 3.5rem;
+    @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+    }
 
     &__list {
+        @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            margin: 0;
+        }
         list-style: none;
     }
 
     &__item {
         position: relative;
-
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
         &:not(:last-child) {
             margin-bottom: .5rem;
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
         }
 
         &::before {
@@ -171,6 +189,15 @@
             align-items: center;
             z-index: 10;
             position: relative;
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+
+            }
+            @media only screen and (max-width: $bp-small) {
+               flex-direction: column;
+                padding: 1.5rem  .5rem;
+            }
         }
 
 
@@ -181,6 +208,13 @@
         height: 1.7rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right:0;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: .5rem;
+        }
     }
 }
 
@@ -189,6 +223,9 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 
@@ -213,6 +250,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -254,16 +296,26 @@
         &:hover {
             padding: 0 5rem;
         }
+        @media only screen and (max-width: $bp-small) {
+            padding: 0  1.5rem;
+        }
     }
 
     &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+        @media only screen and (max-width: $bp-small) {
+            font-size: .7rem;
+        }
     }
 
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 100;
+
+        @media only screen and (max-width: $bp-small) {
+           font-size: 1.8rem;
+        }
     }
 }
 
@@ -342,7 +394,7 @@
     }
 
     &__friends {
-
+        display: flex;
     }
 
     &__photo {
@@ -353,7 +405,7 @@
         box-sizing: content-box;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -361,12 +413,17 @@
 
 .review {
     background-color: #fff;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2rem 4rem rgba(0,0,0,.06);
     padding: 3rem;
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
     border-radius: 3px;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
     &::before{
         content: "\201C";
         position: absolute;
